@@ -4,6 +4,17 @@
  Download links from anonfiles in bulk
  
 ## Installation
+You can download *AnonBulkDownloader* by cloning the Git repository:
+'''
+$ git clone https://github.com/mfcharaf/AnonBulkDownloader/
+'''
 
-
+Install requests library
+'''
+$ pip install requests
+'''
+Or
+'''
+$ pip3 install requests
+'''
 ## Usage
