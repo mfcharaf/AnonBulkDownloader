@@ -18,3 +18,12 @@ $ pip3 install requests
 ```
 
 ## Usage
+Put your anonfiles links in links.txt file then run the script
+```
+$ python ABD.py
+```
+Or you can specify your own file path 
+```
+$ python ABD.py "/path/to/your/file.txt"
+```
+
