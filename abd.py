@@ -2,6 +2,10 @@ from lxml import html
 from requests import get
 import sys
 import os
+import calendar
+import time
+
+ts = calendar.timegm(time.gmtime())
 
 def download(url, file_name):
     with open(file_name, "wb") as file:
@@ -50,9 +54,8 @@ for link in links:
      page = get(link)
      tree = html.fromstring(page.content)
      dlink = tree.xpath('//a[@class="btn btn-primary btn-block"]/@href')
-     fname = os.path.basename(dlink[0])
+     fname = str.replace(os.path.basename(dlink[0]), ".", "_" + str(ts) + ".")
      print("File name : ", fname)
      download(dlink[0], fname)
-     
      
 
