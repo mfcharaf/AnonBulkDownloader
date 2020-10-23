@@ -5,7 +5,7 @@ import os
 import calendar
 import time
 
-ts = calendar.timegm(time.gmtime())
+
 
 def download(url, file_name):
     with open(file_name, "wb") as file:
@@ -49,6 +49,7 @@ links = my_file.readlines()
 print("Links found in file : ", len(links), "\n\n")
 
 for link in links:
+     ts = calendar.timegm(time.gmtime())
      link = str.replace(link, "\n", "")
      print("Downloading " ,link)
      page = get(link)
