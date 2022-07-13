@@ -53,6 +53,9 @@ for link in links:
      link = str.replace(link, "\n", "")
      print("Downloading " ,link)
      page = get(link)
+     if page.status_code != 200 :
+          print("Error :",page.status_code)
+          continue
      tree = html.fromstring(page.content)
      dlink = tree.xpath('//a[@class="btn btn-primary btn-block"]/@href')
      fname = str.replace(os.path.basename(dlink[0]), ".", "_" + str(ts) + ".")
